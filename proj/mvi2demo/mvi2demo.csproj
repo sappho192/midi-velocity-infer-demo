@@ -8,7 +8,74 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Tools\models\mvi-v2-2023-07-20_13-00_56-h4-e5-mse_cosine_loss-alpha0.15-m0.60-LSTM-luong_attention-MAESTRO.onnx" />
+    <None Remove="Tools\utils\csv2midi" />
+    <None Remove="Tools\utils\csv2midi.dll" />
+    <None Remove="Tools\utils\csv2midi.exe" />
+    <None Remove="Tools\utils\csv2midi.pdb" />
+    <None Remove="Tools\utils\CsvHelper.dll" />
+    <None Remove="Tools\utils\Melanchall.DryWetMidi.dll" />
+    <None Remove="Tools\utils\Melanchall_DryWetMidi_Native32.dll" />
+    <None Remove="Tools\utils\Melanchall_DryWetMidi_Native64.dll" />
+    <None Remove="Tools\utils\Melanchall_DryWetMidi_Native64.dylib" />
+    <None Remove="Tools\utils\midi2csv" />
+    <None Remove="Tools\utils\midi2csv.dll" />
+    <None Remove="Tools\utils\midi2csv.exe" />
+    <None Remove="Tools\utils\midi2csv.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tools\models\mvi-v2-2023-07-20_13-00_56-h4-e5-mse_cosine_loss-alpha0.15-m0.60-LSTM-luong_attention-MAESTRO.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\csv2midi">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\csv2midi.dll" />
+    <Content Include="Tools\utils\csv2midi.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\csv2midi.pdb" />
+    <Content Include="Tools\utils\CsvHelper.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\Melanchall.DryWetMidi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\Melanchall_DryWetMidi_Native32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\Melanchall_DryWetMidi_Native64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\Melanchall_DryWetMidi_Native64.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\midi2csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\midi2csv.dll" />
+    <Content Include="Tools\utils\midi2csv.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\utils\midi2csv.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Analysis" Version="0.20.1" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.15.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+    <PackageReference Include="NumSharp" Version="0.30.0" />
+    <PackageReference Include="UrlCombine" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Tools\utils\csv2midi.runtimeconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Tools\utils\midi2csv.runtimeconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

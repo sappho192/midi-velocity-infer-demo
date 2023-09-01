@@ -1,8 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    string link = "https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0";
+    string midiLink = ViewBag.MidiLink == "" ? Url.Content("~/content/pastorale.mid") : ViewBag.MidiLink;
 }
+<script src="@(link)"></script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Learn about demo.</p>
+    <p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".mid,.midi" />
+            <button type="submit">Upload MIDI File</button>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert" style="margin-top:20px">
+                @ViewBag.Message
+            </div>
+            <div>
+                @ViewBag.InferenceMessage [<a href="@ViewBag.MidiLink">Download</a>]
+            </div>
+        }
+    </p>
+    <p>
+        @*<midi-player src="https://magenta.github.io/magenta-js/music/demos/melody.mid"*@
+        <midi-player id="midiPlayer" src="@(midiLink)"
+                     sound-font visualizer="#myVisualizer">
+        </midi-player>
+        <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+    </p>
 </div>

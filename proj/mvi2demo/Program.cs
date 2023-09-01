@@ -1,3 +1,5 @@
+using mvi2demo.Services;
+
 namespace mvi2demo
 {
     public class Program
@@ -8,6 +10,8 @@ namespace mvi2demo
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<IBufferedFileUploadService, BufferedFileUploadLocalService>();
+            builder.Services.AddHttpContextAccessor2();
 
             var app = builder.Build();
 
@@ -21,6 +25,8 @@ namespace mvi2demo
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseHttpContext();
 
             app.MapControllerRoute(
                 name: "default",
